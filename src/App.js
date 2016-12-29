@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import './index.css';
+import './css/site.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
+import '../node_modules/toastr/build/toastr.min.css';
+import SideBar from './common/SideBar';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <main id="application-wrapper" className="container-fluid">
+        <SideBar />
+        {this.props.children}
+      </main>
     );
   }
 }
