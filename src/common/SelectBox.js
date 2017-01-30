@@ -5,10 +5,10 @@ const SelectBox = props => {
         <div className="form-group">
             <label htmlFor={props.name} className="control-label">{props.label}</label>
             <br />
-            <select name={props.name} className="form-control">
+            <select name={props.name} className="form-control" onChange={props.onChange}>
                 <option value="">{props.defaultOption}</option>
                 {props.options.map((option) => {
-                    return <option key={option.value} value={option.value}>{option.text}</option>;
+                    return <option key={option.value} value={option.text}>{option.text}</option>;
                 })}
             </select>
         </div>

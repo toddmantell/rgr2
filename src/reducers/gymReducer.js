@@ -5,5 +5,7 @@ export default function gymReducer(state = initialState.gyms, action) {
     switch (action.type) {
         case actionTypes.LOAD_GYMS:
             return action.gyms;
+        default:
+            return state;
     }
 }

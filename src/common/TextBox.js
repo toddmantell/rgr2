@@ -4,7 +4,7 @@ const TextBox = props => {
     return (
         <div className="form-group">
             <label htmlFor={props.name} className="control-label">{props.label}</label>
-            <input type="text" name={props.name} className="form-control" placeholder={props.placeholder} onChange={props.update} />
+            <input type="text" name={props.name} className="form-control" placeholder={props.placeholder} onChange={props.onChange} />
         </div>
     );
 }

@@ -5,12 +5,13 @@ class EditRoutePage extends React.Component {
     constructor() {
         super();
         
-        this.state = {route: {
-
-        }
-        
+        this.state = {
+            route: {}   
         };
     
+    }
+    componentDidMount() {
+        setState({route: this.props.route})
     }
     render() {
         return <h1>Edit!</h1>;
@@ -21,7 +22,9 @@ EditRoutePage.propTypes = {
     route: React.PropTypes.object.isRequired
 };
 
-function mapStateToProps() {}
+function mapStateToProps(state, ownProps) {
+    state: state.
+}
 
 function mapDispatchToProps() {}
 

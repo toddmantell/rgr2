@@ -10,8 +10,8 @@ const SideBar = props => {
           </div>        
           <ul className="nav">
               <IndexLink to="/" className="sidebar-item text-info btn-lg active"><i className="fa fa-home"></i> Home</IndexLink>
-              <Link to="/addRoute" className="sidebar-item text-info btn-lg"><i className="fa fa-arrow-circle-o-up"></i> Add Route</Link>
-              <Link to="/editRoute" className="sidebar-item text-info btn-lg"><i className="fa fa-database"></i> Edit Route</Link>
+              <Link to="/manageRoute" className="sidebar-item text-info btn-lg"><i className="fa fa-arrow-circle-o-up"></i> Add Route</Link>
+              <Link to="/editRoutes" className="sidebar-item text-info btn-lg"><i className="fa fa-database"></i> Edit Routes</Link>
           </ul>
         </section>
         );
