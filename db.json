@@ -1,0 +1,49 @@
+//used for the json-server
+{
+   "routes": [
+       {"routeId": 1,
+        "routeName": "Crimpin' Ain't Easy",
+        "routeColor": "Red",
+        "routeSetter": "Half-Ton",
+        "routeType": "Top Rope",
+        "routeGrade": "5.11c"
+       },
+       {"routeId": 2,
+        "routeName": "Power Crazy",
+        "routeColor": "Blue",
+        "routeSetter": "Half-Ton",
+        "routeType": "Lead",
+        "routeGrade": "5.11b"
+       }
+   ],
+   "grades":  [
+    {"value": 1, "text": "5.6"},
+    {"value": 2, "text": "5.7"},
+    {"value": 3, "text": "5.8"},
+    {"value": 4, "text": "5.9"},
+    {"value": 5, "text": "5.10a"},
+    {"value": 6, "text": "5.10b"},
+    {"value": 7, "text": "5.10c"},
+    {"value": 8, "text": "5.10d"},
+    {"value": 9, "text": "5.11a"},
+    {"value": 10, "text": "5.11b"},
+    {"value": 11, "text": "5.11c"},
+    {"value": 12, "text": "5.11d"},
+    {"value": 13, "text": "5.12a"},
+    {"value": 14, "text": "5.12b"},
+    {"value": 15, "text": "5.12c"},
+    {"value": 16, "text": "5.12d"},
+    {"value": 17, "text": "5.13a"},
+    {"value": 18, "text": "5.13b"},
+    {"value": 19, "text": "5.13c"},
+    {"value": 21, "text": "5.13d"},
+    {"value": 22, "text": "5.14a"},
+    {"value": 23, "text": "5.14b"},
+    {"value": 24, "text": "5.14c"},
+    {"value": 25, "text": "5.14d"},
+    {"value": 26, "text": "5.15a"},
+    {"value": 27, "text": "5.15b"},
+    {"value": 28, "text": "5.15c"},
+    {"value": 29, "text": "5.15d"}
+]
+}

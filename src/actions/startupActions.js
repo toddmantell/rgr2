@@ -8,11 +8,15 @@ export function loadOptionsSuccess(options) {
     }
 };
 
-// export function loadOptions() {
-//     return function(dispatch) {
-//         //return the data retrieved from the api call and dispatch the success action
-//         return fetch('http://localhost:62697/api/SelectOptions').then((response) => {
-//                 dispatch(loadOptionsSuccess(response.json()))
-//             }).catch();        
-//     }
-// }
+export function loadOptionsAsync() {
+    return function(dispatch) {
+        //return the data retrieved from the api call and dispatch the success action
+        return fetch('http://localhost:8080/grades')
+                .then(response => response.json())
+                .then(grades => {
+                    console.log(`grades retrieved ${JSON.stringify(grades)}`);            
+                    dispatch(loadOptionsSuccess(grades));
+                })
+                .catch(error => {throw(error)});        
+    }
+}

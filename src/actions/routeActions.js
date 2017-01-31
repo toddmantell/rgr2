@@ -1,17 +1,31 @@
 import * as actionTypes from './actionTypes';
 
-const addRoute = route => {
+export const addRoute = route => {
     return {
         type: actionTypes.ADD_ROUTE,
         route
     }
 }
 
-const updateRoute = route => {
+export const updateRoute = route => {
     return {
         type: actionTypes.UPDATE_ROUTE,
         route
     }
 }
 
-const loadRoutes = //add code for loading the gyms from mock and real api
+export const loadRoutesSuccess = routes => {
+    return {
+        type: actionTypes.LOAD_ROUTES,
+        routes
+    }
+}
+
+export function loadRoutesAsync() {
+    return function(dispatch) {
+        return fetch('http://localhost:8080/routes')
+            .then(response => response.json())
+            .then(routes => dispatch(loadRoutesSuccess(routes)))
+            .catch(error => {throw(error)});
+    }
+}
