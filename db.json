@@ -1,4 +1,3 @@
-//used for the json-server
 {
    "routes": [
        {"routeId": 1,
@@ -6,14 +5,40 @@
         "routeColor": "Red",
         "routeSetter": "Half-Ton",
         "routeType": "Top Rope",
-        "routeGrade": "5.11c"
+        "routeGrade": "5.11c",
+        "routePopularity": "3.8"
        },
        {"routeId": 2,
         "routeName": "Power Crazy",
-        "routeColor": "Blue",
+        "routeColor": "Yellow",
         "routeSetter": "Half-Ton",
         "routeType": "Lead",
-        "routeGrade": "5.11b"
+        "routeGrade": "5.11b",
+        "routePopularity": "3.8"
+       },
+       {"routeId": 3,
+        "routeName": "Blue Steel",
+        "routeColor": "Blue",
+        "routeSetter": "Zoolander",
+        "routeType": "Lead",
+        "routeGrade": "5.10a",
+        "routePopularity": "3.8"
+       },
+       {"routeId": 4,
+        "routeName": "Whatever floats your boat",
+        "routeColor": "Green",
+        "routeSetter": "Crash Pad",
+        "routeType": "TR Or Lead",
+        "routeGrade": "5.12a",
+        "routePopularity": "3.8"
+       },
+       {"routeId": 5,
+        "routeName": "Everest",
+        "routeColor": "Blue",
+        "routeSetter": "The Mechanic",
+        "routeType": "Lead",
+        "routeGrade": "5.13d",
+        "routePopularity": "4.8"
        }
    ],
    "grades":  [
