@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes';
+import API from './apiUrl';
 
 export const addRoute = route => {
     return {
@@ -23,9 +24,24 @@ export const loadRoutesSuccess = routes => {
 
 export function loadRoutesAsync() {
     return function(dispatch) {
-        return fetch('http://localhost:8080/routes')
+        return fetch(API.routes)
             .then(response => response.json())
             .then(routes => dispatch(loadRoutesSuccess(routes)))
             .catch(error => {throw(error)});
+    }
+}
+
+export function addRouteAsync(route) {
+    return function (dispatch) {
+        return fetch(API.routes,{
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(route)
+        }).then(response => response.json())
+            .catch(error => error); 
+                       
     }
 }

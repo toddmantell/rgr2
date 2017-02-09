@@ -1,9 +1,11 @@
 import React from 'react';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import ManageRouteForm from './ManageRouteForm';
 import {browserHistory} from 'react-router';
 import Heading from '../common/Heading';
 import toastr from 'toastr';
+import * as routeActions from '../actions/routeActions';
 
 class ManageRoutePage extends React.Component {
     constructor() {
@@ -30,15 +32,24 @@ class ManageRoutePage extends React.Component {
     }
     saveRoute() {
         let {route} = this.state;
-        console.log(route);
         
-        //http post route, on return, you should have the route id
-        this.redirect(route.routeName);
+        if (route.id) {
+            this.props.actions.updateRouteAsync(route)
+                .then(() => toastr.success(`Route ${route.routeName} Successfully Updated!`))
+                .catch(error => toastr.error(`There was an error: ${error}`));
+        }
+        else {
+        this.props.actions.addRouteAsync(route)
+            .then(() => {this.redirect(route.routeName);})
+            .catch(error => toastr.error(`There was an error: ${error}`));
+        }
     }
     redirect(routeName) {
         toastr.success(`Route ${routeName} Successfully Added!`);
-        setTimeout(() => {
-            browserHistory.push('/');}, 1000); 
+        this.props.actions.loadRoutesAsync();//this is to rehydrate the store so the new route appears in Dashboard
+        setTimeout(() => {            
+            browserHistory.push('/');
+        }, 1000); 
     }
     render() {
         return (
@@ -60,4 +71,10 @@ function mapStateToProps(state, ownProps) {
     };  
 }
 
-export default connect(mapStateToProps)(ManageRoutePage);
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(routeActions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ManageRoutePage);

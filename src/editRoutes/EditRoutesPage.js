@@ -14,7 +14,7 @@ class EditRoutesPage extends React.Component {
     
     }
     render() {
-        return <Heading message="Edit/Manage Routes" />;
+        return <Heading message="Edit My Routes" />;
     }
 }
 

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import RoutesTable from './RoutesTable';
 import Heading from '../common/Heading';
 import StatsRow from './StatsRow';
+import RoutesChart from './RoutesChart';
 
 class Dashboard extends React.Component {
     render() {
@@ -16,8 +17,9 @@ class Dashboard extends React.Component {
             <main>
                 <Heading message="Rock Gym Route Rater (RGR2) Dashboard:" />                
                 <StatsRow {...statsRowProps} />
-                <img src="../images/generic-chart.png" alt="chart" />
-                <RoutesTable headings={['Route Name','Route Grade','Route Setter','Route Color','Popularity','Route Type']} routes={this.props.routes} />
+                <RoutesChart />
+                <RoutesTable headings={['Route Name','Route Grade','Route Setter','Route Color','Popularity','Route Type']}
+                message="Latest Routes:" routes={this.props.routes} />
             </main>
         );
     }
@@ -30,7 +32,7 @@ function mapStateToProps(state, ownProps) {
 }
 
 Dashboard.propTypes = {
-
+    routes: React.PropTypes.array.isRequired
 }
 
 export default connect(mapStateToProps)(Dashboard);

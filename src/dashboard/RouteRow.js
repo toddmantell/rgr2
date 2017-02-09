@@ -4,8 +4,8 @@ import {Link} from 'react-router';
 const RouteRow = props => {
     const {route} = props;
     return (
-        <tr key={route.routeId}>
-            <td><Link to={`/RouteDetail/:${route.routeId}`}>{route.routeName}</Link></td>
+        <tr key={route.id}>
+            <td><Link to={`/routeDetail/${route.id}`}>{route.routeName}</Link></td>
             <td>{route.routeGrade}</td>
             <td>{route.routeSetter}</td>
             <td>{route.routeColor}</td>

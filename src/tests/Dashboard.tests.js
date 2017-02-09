@@ -4,4 +4,6 @@ const setup = () => {
     const props = {
         
     }
+    return shallow(<Dashboard {...props} />);
 }
+
